@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Doctor's Journal</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 24px 16px; background: #fafafa; }
+    h1 { color: #1B7A8A; font-size: 28px; margin-bottom: 8px; }
+    h2 { color: #1B7A8A; font-size: 20px; margin-top: 32px; margin-bottom: 12px; }
+    p { margin-bottom: 12px; }
+    ul { margin-left: 20px; margin-bottom: 12px; }
+    li { margin-bottom: 6px; }
+    .subtitle { color: #666; font-size: 14px; margin-bottom: 24px; }
+    .footer { text-align: center; color: #999; font-size: 13px; margin-top: 48px; padding-top: 24px; border-top: 1px solid #ddd; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  <p class="subtitle">Doctor's Journal &mdash; Last updated: March 2026</p>
+
+  <p>Doctor's Journal is committed to protecting your privacy and personal health information. This policy explains what information we collect, how we use it, and your rights regarding your data. We comply with the New Zealand Privacy Act 2020 and follow best practices for health data handling.</p>
+
+  <h2>What Information We Collect</h2>
+  <p>We collect information that you provide directly when using Doctor's Journal, including:</p>
+  <ul>
+    <li><strong>Account information:</strong> your email address and authentication credentials</li>
+    <li><strong>Health records:</strong> recordings of medical appointments, transcriptions, and AI-generated summaries</li>
+    <li><strong>Medications:</strong> names, dosages, schedules, and prescription details</li>
+    <li><strong>Documents:</strong> uploaded medical documents, test results, and associated metadata</li>
+    <li><strong>Healthcare providers:</strong> names, addresses, and contact details of your doctors, specialists, and pharmacies</li>
+    <li><strong>Emergency information:</strong> emergency contacts and medical details you choose to store</li>
+  </ul>
+  <p>All health data is stored locally on your device using encrypted storage. We do not maintain a central database of your health information.</p>
+
+  <h2>How We Use Your Information</h2>
+  <p>Your information is used solely to provide and improve the Doctor's Journal experience:</p>
+  <ul>
+    <li>To transcribe and summarise your medical appointment recordings</li>
+    <li>To extract text from scanned documents and prescriptions</li>
+    <li>To manage your medication schedules and send reminders</li>
+    <li>To organise your medical history into a searchable timeline</li>
+    <li>To create encrypted backups of your data to your chosen cloud provider</li>
+  </ul>
+
+  <h2>Third-Party Data Processing</h2>
+  <p>To provide AI-powered features, certain data is processed by third-party services. We take every precaution to minimise data exposure and ensure secure handling:</p>
+  <ul>
+    <li><strong>OpenAI (Whisper, GPT-4o):</strong> Audio recordings are sent for transcription and summarisation via our secure server. OpenAI does not retain your data for training when accessed via the API.</li>
+    <li><strong>Google (Cloud Vision, Places):</strong> Used for document OCR and healthcare provider search. Google processes data per their Cloud Terms of Service and does not use it for advertising.</li>
+    <li><strong>Cloud backup providers (Google Drive / iCloud):</strong> Your backup data is encrypted with AES-256 before leaving your device. The cloud provider stores only encrypted data and cannot read your health information.</li>
+  </ul>
+  <p>All data transmitted to third parties is sent over TLS 1.3 encrypted connections. We never sell or share your data for advertising or marketing purposes.</p>
+
+  <h2>AI Processing Consent</h2>
+  <p>Before any AI processing occurs, the app will ask for your explicit consent. You may choose not to use AI features, in which case your audio recordings will be stored locally without transcription or summarisation. You can withdraw consent at any time in the app settings.</p>
+
+  <h2>Your Rights</h2>
+  <p>Under the New Zealand Privacy Act 2020, you have the right to:</p>
+  <ul>
+    <li><strong>Export your data:</strong> You can export your complete medical history at any time in JSON format.</li>
+    <li><strong>Edit your information:</strong> All records in Doctor's Journal can be edited by you at any time.</li>
+    <li><strong>Delete your account:</strong> You can permanently delete your account and all associated data from within the app. This action is irreversible.</li>
+    <li><strong>Access your data:</strong> You can view all data that Doctor's Journal holds about you directly in the app.</li>
+    <li><strong>Correct your data:</strong> If any information is inaccurate, you can correct it yourself or contact us for assistance.</li>
+  </ul>
+
+  <h2>Data Retention</h2>
+  <p>Doctor's Journal is designed as a permanent medical journal. Your data is retained on your device for as long as you choose to keep it. We do not automatically delete any of your health records.</p>
+  <p>If you delete your account, all data on your device will be permanently removed. Encrypted backups stored in your cloud account (Google Drive or iCloud) will need to be deleted separately by you, as we do not have access to your cloud storage.</p>
+  <p>App usage logs are retained on your device for up to 90 days for troubleshooting purposes. These logs never contain personally identifiable information or health data.</p>
+
+  <h2>Data Security</h2>
+  <p>We take the security of your health information very seriously and implement multiple layers of protection:</p>
+  <ul>
+    <li><strong>Local encryption:</strong> Your data is stored in an encrypted database on your device.</li>
+    <li><strong>Backup encryption:</strong> All backups are encrypted with AES-256 encryption before leaving your device. Encryption keys are stored securely in your device's keychain (iOS) or keystore (Android).</li>
+    <li><strong>Transport encryption:</strong> All network communication uses TLS 1.3.</li>
+    <li><strong>Authentication:</strong> Your account is protected by Firebase Authentication with support for biometric login (Face ID / fingerprint).</li>
+    <li><strong>App lock:</strong> When enabled, the app requires biometric authentication each time you return to it.</li>
+    <li><strong>Session management:</strong> Automatic session timeout after 30 minutes of inactivity.</li>
+    <li><strong>Login protection:</strong> Account lockout after 5 failed login attempts for 15 minutes.</li>
+  </ul>
+
+  <h2>Children's Privacy</h2>
+  <p>Doctor's Journal is not intended for use by children under the age of 16. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has provided us with personal information, please contact us so we can take appropriate action.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this privacy policy from time to time. When we make changes, we will update the "Last updated" date at the top of this policy and notify you within the app. We encourage you to review this policy periodically.</p>
+  <p>If we make material changes to how we handle your health data, we will provide prominent notice within the app and may require your renewed consent before continuing to process your data under the updated terms.</p>
+
+  <h2>Contact</h2>
+  <p>If you have any questions or concerns about this privacy policy or how your data is handled, please contact us at:</p>
+  <p><strong>privacy@doctorsjournal.nz</strong></p>
+
+  <div class="footer">
+    <p>&copy; 2026 Doctor's Journal. All rights reserved.</p>
+    <p>Developed in Aotearoa New Zealand</p>
+  </div>
+</body>
+</html>
