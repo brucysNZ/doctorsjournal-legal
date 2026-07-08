@@ -18,14 +18,14 @@
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="subtitle">Doctor's Journal &mdash; Last updated: 16 June 2026</p>
+  <p class="subtitle">Doctor's Journal &mdash; Last updated: 8 July 2026</p>
 
-  <p>Doctor's Journal is committed to protecting your privacy and personal health information. This policy explains what information we collect, how we use it, and your rights regarding your data. We comply with the New Zealand Privacy Act 2020 and follow best practices for health data handling.</p>
+  <p>Doctor's Journal is committed to protecting your privacy and personal health information. This policy explains where your data lives, what leaves your device, and your rights over it. We comply with the New Zealand Privacy Act 2020 and follow best practices for health data handling.</p>
 
-  <h2>What Information We Collect</h2>
-  <p>We collect information that you provide directly when using Doctor's Journal, including:</p>
+  <h2>Where Your Data Lives</h2>
+  <p>Doctor's Journal is a <strong>local-first app</strong>. Your health records, medications, providers, documents, and all other personal data are stored in an encrypted database <strong>on your device only</strong>. We do not operate a central database of your health information. We cannot access, view, retrieve, or restore your data &mdash; not even if asked.</p>
+  <p>The following is stored on your device:</p>
   <ul>
-    <li><strong>Account information:</strong> your email address and authentication credentials</li>
     <li><strong>Health records:</strong> recordings of medical appointments, transcriptions, and AI-generated summaries</li>
     <li><strong>Symptoms diary, journal entries, and notes</strong> you create to remember for your doctor</li>
     <li><strong>Medications:</strong> names, dosages, schedules, refill dates, and prescription details</li>
@@ -35,31 +35,45 @@
     <li><strong>Optional health readings</strong> from Apple Health or Health Connect (heart rate, blood pressure, sleep, etc) if you choose to connect them</li>
     <li><strong>Emergency information:</strong> emergency contacts and medical details you choose to store</li>
   </ul>
-  <p>All health data is stored locally on your device using encrypted storage. We do not maintain a central database of your health information.</p>
 
-  <h2>How We Use Your Information</h2>
-  <p>Your information is used solely to provide and improve the Doctor's Journal experience:</p>
+  <h2>What We Store On Our Servers</h2>
+  <p>The only information we hold on our servers is what is strictly required to sign you in and manage your subscription:</p>
   <ul>
-    <li>To transcribe and summarise your medical appointment recordings</li>
-    <li>To read summaries back to you as audio in a voice you choose (text-to-speech)</li>
-    <li>To answer your spoken questions from your own records (the "Ask DJ" feature)</li>
-    <li>To filter out background chatter (e.g. children talking) so only medical conversation appears in summaries</li>
-    <li>To extract text from scanned documents and prescriptions</li>
-    <li>To manage your medication schedules, refill dates, and reminders</li>
-    <li>To schedule pre-appointment notifications (24 hours and 2 hours before)</li>
-    <li>To organise your medical history into a searchable timeline</li>
-    <li>To create encrypted backups of your data to your chosen cloud provider</li>
+    <li><strong>Firebase Authentication:</strong> your email address and authentication credentials &mdash; used solely to sign you in and link your device to your account</li>
+    <li><strong>Subscription status:</strong> whether you have an active premium subscription (managed via RevenueCat and Apple/Google in-app purchases)</li>
   </ul>
+  <p>We do <strong>not</strong> store any of your health records, recordings, transcripts, medications, symptoms, or any other personal medical information on our servers.</p>
 
-  <h2>Third-Party Data Processing</h2>
-  <p>To provide AI-powered features, certain data is processed by third-party services. We take every precaution to minimise data exposure and ensure secure handling:</p>
+  <h2>What Leaves Your Device (AI Processing)</h2>
+  <p>To provide AI-powered features, certain data is sent transiently to third-party services for processing. This data is not retained by us or by them for training:</p>
   <ul>
     <li><strong>OpenAI (Whisper, GPT-4o-mini, text-to-speech):</strong> Audio recordings are sent to Whisper for transcription, transcripts are sent to GPT-4o-mini for summarisation and the Ask DJ voice-search feature, and summary text is sent to OpenAI's text-to-speech service for voice playback. All requests are made via our secure server. OpenAI does not retain your data for training when accessed via the API. Audio files are deleted from our servers within seconds of transcription completing.</li>
     <li><strong>Google (Cloud Vision, Places):</strong> Used for document OCR and healthcare provider search. Google processes data per their Cloud Terms of Service and does not use it for advertising.</li>
-    <li><strong>Apple HealthKit / Google Health Connect:</strong> If you connect Apple Health (iOS) or Health Connect (Android), the app reads selected health readings (heart rate, blood pressure, sleep, etc) into your local journal. These readings stay on your device and are never sent to our servers.</li>
-    <li><strong>Cloud backup providers (Google Drive / iCloud):</strong> Your backup data is encrypted with AES-256 before leaving your device. The cloud provider stores only encrypted data and cannot read your health information.</li>
+    <li><strong>Apple HealthKit / Google Health Connect:</strong> If you connect Apple Health (iOS) or Health Connect (Android), the app reads selected health readings (heart rate, blood pressure, sleep, etc) into your local journal. These readings stay on your device and are never sent to our servers or any third party.</li>
   </ul>
   <p>All data transmitted to third parties is sent over TLS 1.3 encrypted connections. We never sell or share your data for advertising or marketing purposes.</p>
+
+  <h2>Backups (You Control Them)</h2>
+  <p>You can choose to enable encrypted backups. When you do:</p>
+  <ul>
+    <li>Your health data is encrypted with AES-256 <strong>on your device, before it leaves</strong>. The encryption key stays on your device only.</li>
+    <li>The encrypted backup is uploaded to <strong>your own Google Drive or iCloud account</strong> &mdash; not ours. Only you have access to it.</li>
+    <li>Google or Apple cannot read the contents of the backup &mdash; they only store an encrypted blob.</li>
+    <li>If you delete the backup from your cloud storage, it is permanently gone. We cannot recover it.</li>
+  </ul>
+  <p>If you disable backups, your data stays only on your device. If your device is lost or reset without a backup, your data cannot be recovered.</p>
+
+  <h2>How the App Uses Your Data On Your Device</h2>
+  <p>The app processes your data locally to:</p>
+  <ul>
+    <li>Show your medical history in a searchable timeline</li>
+    <li>Manage medication schedules, refill dates, and reminders</li>
+    <li>Schedule pre-appointment notifications (24 hours and 2 hours before)</li>
+    <li>Read summaries back to you as audio in a voice you choose (text-to-speech)</li>
+    <li>Answer your spoken questions from your own records (the "Ask DJ" feature)</li>
+    <li>Filter out background chatter (e.g. children talking) so only medical conversation appears in summaries</li>
+    <li>Extract text from scanned documents and prescriptions</li>
+  </ul>
 
   <h2>AI Processing Consent</h2>
   <p>Before any AI processing occurs, the app will ask for your explicit consent. You may choose not to use AI features, in which case your audio recordings will be stored locally without transcription or summarisation. You can withdraw consent at any time in the app settings.</p>
