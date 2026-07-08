@@ -49,7 +49,7 @@
   <ul>
     <li><strong>OpenAI (Whisper, GPT-4o-mini, text-to-speech):</strong> Audio recordings are sent to Whisper for transcription, transcripts are sent to GPT-4o-mini for summarisation and the Ask DJ voice-search feature, and summary text is sent to OpenAI's text-to-speech service for voice playback. All requests are routed through a secure Firebase Cloud Function (Google infrastructure) so the OpenAI API key is not exposed on the device. OpenAI does not retain your data for training when accessed via the API. Audio files are deleted from the Cloud Function within seconds of transcription completing.</li>
     <li><strong>Google (Cloud Vision, Places):</strong> Used for document OCR and healthcare provider search. Google processes data per their Cloud Terms of Service and does not use it for advertising.</li>
-    <li><strong>Apple HealthKit / Google Health Connect:</strong> If you connect Apple Health (iOS) or Health Connect (Android), the app reads selected health readings (heart rate, blood pressure, sleep, etc) into your local journal. These readings stay on your device and are never sent to our servers or any third party.</li>
+    <li><strong>Apple HealthKit / Google Health Connect:</strong> If you connect Apple Health (iOS) or Health Connect (Android), the app reads selected health readings (heart rate, blood pressure, sleep, etc) into your local journal. These readings stay on your device only and are never sent anywhere off your device.</li>
   </ul>
   <p>All data transmitted to third parties is sent over TLS 1.3 encrypted connections. We never sell or share your data for advertising or marketing purposes.</p>
 
