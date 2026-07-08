@@ -36,18 +36,18 @@
     <li><strong>Emergency information:</strong> emergency contacts and medical details you choose to store</li>
   </ul>
 
-  <h2>What We Store On Our Servers</h2>
-  <p>The only information we hold on our servers is what is strictly required to sign you in and manage your subscription:</p>
+  <h2>Third-Party Services We Use for Sign-In</h2>
+  <p>Doctor's Journal does not operate any servers of its own. To sign you in, the app uses:</p>
   <ul>
-    <li><strong>Firebase Authentication:</strong> your email address and authentication credentials &mdash; used solely to sign you in and link your device to your account</li>
-    <li><strong>Subscription status:</strong> whether you have an active premium subscription (managed via RevenueCat and Apple/Google in-app purchases)</li>
+    <li><strong>Firebase Authentication (Google):</strong> stores your email address and authentication credentials so the app can sign you in and link your device to your account. This information is held by Google on Firebase's infrastructure.</li>
   </ul>
-  <p>We do <strong>not</strong> store any of your health records, recordings, transcripts, medications, symptoms, or any other personal medical information on our servers.</p>
+  <p>Your subscription is managed by Apple (App Store) or Google (Play Store) directly through their in-app purchase systems. We do not hold your payment information.</p>
+  <p>None of these providers hold your health records, recordings, transcripts, medications, symptoms, or any other personal medical information &mdash; those live on your device only.</p>
 
   <h2>What Leaves Your Device (AI Processing)</h2>
   <p>To provide AI-powered features, certain data is sent transiently to third-party services for processing. This data is not retained by us or by them for training:</p>
   <ul>
-    <li><strong>OpenAI (Whisper, GPT-4o-mini, text-to-speech):</strong> Audio recordings are sent to Whisper for transcription, transcripts are sent to GPT-4o-mini for summarisation and the Ask DJ voice-search feature, and summary text is sent to OpenAI's text-to-speech service for voice playback. All requests are made via our secure server. OpenAI does not retain your data for training when accessed via the API. Audio files are deleted from our servers within seconds of transcription completing.</li>
+    <li><strong>OpenAI (Whisper, GPT-4o-mini, text-to-speech):</strong> Audio recordings are sent to Whisper for transcription, transcripts are sent to GPT-4o-mini for summarisation and the Ask DJ voice-search feature, and summary text is sent to OpenAI's text-to-speech service for voice playback. All requests are routed through a secure Firebase Cloud Function (Google infrastructure) so the OpenAI API key is not exposed on the device. OpenAI does not retain your data for training when accessed via the API. Audio files are deleted from the Cloud Function within seconds of transcription completing.</li>
     <li><strong>Google (Cloud Vision, Places):</strong> Used for document OCR and healthcare provider search. Google processes data per their Cloud Terms of Service and does not use it for advertising.</li>
     <li><strong>Apple HealthKit / Google Health Connect:</strong> If you connect Apple Health (iOS) or Health Connect (Android), the app reads selected health readings (heart rate, blood pressure, sleep, etc) into your local journal. These readings stay on your device and are never sent to our servers or any third party.</li>
   </ul>
