@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doctor's Journal — Launch Checklist</title>
+<style>
+  :root { --teal:#1B7A8A; --teal-dark:#0f4a56; --coral:#e07a5f; --ink:#1a2e35; --soft:#5a6b72; --line:#e3e8ea; --bg:#f5faf9; --green:#1f9d55; --amber:#c77700; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  header { background:linear-gradient(135deg,var(--teal),var(--teal-dark)); color:#fff; padding:30px 22px 26px; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 18px; }
+  header .wrap { padding:0 18px; }
+  h1 { margin:0; font-size:26px; } .brand { color:#8be0dd; font-weight:800; }
+  .sub { color:#b8d5d9; margin-top:6px; font-size:13.5px; }
+  .prog { margin-top:14px; font-size:13px; color:#dfe8ec; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:10px; padding:8px 12px; }
+  .prog b { color:#8be0dd; }
+  main { padding:22px 0 70px; }
+  h2 { font-size:15px; letter-spacing:.02em; text-transform:uppercase; margin:26px 0 4px; color:var(--teal-dark); }
+  .note { font-size:13px; color:var(--soft); margin:2px 0 10px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:6px 8px; }
+  .item { display:flex; align-items:flex-start; gap:11px; padding:11px 8px; border-bottom:1px solid var(--line); cursor:pointer; }
+  .item:last-child { border-bottom:0; }
+  .item input { width:20px; height:20px; margin-top:1px; accent-color:var(--green); flex:0 0 auto; }
+  .lbl { flex:1; }
+  .lbl .t { font-size:15px; }
+  .lbl .hint { font-size:12.5px; color:var(--soft); margin-top:1px; }
+  .done .lbl .t { color:var(--soft); text-decoration:line-through; }
+  .ts { font-size:11.5px; color:var(--green); margin-top:3px; font-weight:600; }
+  .tag { display:inline-block; font-size:10.5px; font-weight:700; padding:1px 7px; border-radius:20px; margin-left:6px; vertical-align:middle; }
+  .tag.done { background:#e4f5ea; color:var(--green); }
+  .tag.wait { background:#fdf0dc; color:var(--amber); }
+  .tag.live { background:#dff2fb; color:#0669a0; }
+  .subhead { font-size:12px; font-weight:700; color:var(--soft); padding:10px 8px 2px; }
+  footer { border-top:1px solid var(--line); margin-top:30px; padding-top:14px; font-size:12px; color:var(--soft); }
+  .reset { margin-top:10px; font-size:12px; color:#1668e3; background:none; border:0; cursor:pointer; padding:0; }
+  .install .plat { font-size:14px; font-weight:800; color:var(--teal-dark); margin:14px 0 4px; }
+  .install .plat:first-child { margin-top:2px; }
+  .install ol { margin:6px 0 4px; padding-left:20px; }
+  .install li { font-size:13.5px; margin:5px 0; color:var(--ink); line-height:1.4; }
+  .linkbtn { display:inline-block; background:var(--teal); color:#fff; font-weight:800; font-size:14px; padding:9px 14px; border-radius:9px; text-decoration:none; margin:4px 0 6px; word-break:break-all; }
+  .hintline { font-size:13px; color:var(--soft); margin:6px 0; line-height:1.45; }
+  code { background:#eef4f5; padding:1px 5px; border-radius:4px; font-size:13px; }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1><span class="brand">Doctor's Journal</span> — Launch Checklist</h1>
+  <div class="sub">Everything outstanding to go live on the App Store &amp; Play Store. Tap to tick — each item date-stamps itself.</div>
+  <div class="prog" id="prog">Loading…</div>
+</div></header>
+
+<main class="wrap" id="list">
+
+<h2>📲 Install Doctor's Journal &amp; Sign In — Tester Instructions</h2>
+<div class="note">Copy the steps for your phone. Same links for everyone. Any problems — email <b>mydoctorsjournal@gmail.com</b>.</div>
+<div class="card install">
+  <div class="plat">🍎 iPhone / iPad</div>
+  <a class="linkbtn" href="#TESTFLIGHT_LINK_PLACEHOLDER">testflight.apple.com/join/…  (paste real link)</a>
+  <ol>
+    <li>Install the free <b>TestFlight</b> app from the App Store (one time only).</li>
+    <li>Tap the link above — it opens in TestFlight.</li>
+    <li>Tap <b>Accept</b>, then <b>Install</b>.</li>
+    <li>Open <b>Doctor's Journal</b> and sign in (see below).</li>
+  </ol>
+
+  <div class="plat">🤖 Android</div>
+  <a class="linkbtn" href="https://play.google.com/apps/internaltest/4701730022045859120">play.google.com/apps/internaltest/4701730022045859120</a>
+  <ol>
+    <li>Tap the link on your Android phone → tap <b>Become a tester</b>.</li>
+    <li>Tap <b>Download it on Google Play</b> → <b>Install</b>.</li>
+    <li>Open <b>Doctor's Journal</b> and sign in (see below).</li>
+  </ol>
+  <div class="hintline"><b>Says "item not found"?</b> Google's still publishing it to your account — wait 10–15 minutes and tap the link again. Also make sure the Play Store is on the <b>same Google account</b> Bruce added to the tester list.</div>
+
+  <div class="plat">🔑 Signing in (both phones)</div>
+  <div class="hintline">On the sign-in screen you have three easy options — pick any:</div>
+  <ol>
+    <li><b>Continue with Google</b> — tap it, choose your Google account, done. <i>(Easiest — most people use this.)</i></li>
+    <li><b>Continue with Apple</b> — iPhone only. Use Face ID / Touch ID to sign in without giving Apple your email if you prefer.</li>
+    <li><b>Email &amp; password</b> — enter your email and a password to create your login. Use this if you'd rather not use Google or Apple.</li>
+  </ol>
+  <div class="hintline">Whichever you pick, your medical journal is <b>encrypted on your phone</b> and backed up to your own Google Drive or iCloud — never to Bruce.</div>
+</div>
+
+<h2>1 · Apple — TestFlight &amp; App Store</h2>
+<div class="note">iOS 221 is the rollback build now processing on TestFlight. Path: external testing → full App Store review → live.</div>
+<div class="card">
+  <label class="item"><input type="checkbox" id="a1"><span class="lbl"><span class="t">iOS 221 processed in TestFlight <span class="tag wait">watcher on</span></span><span class="hint">Apple emails when the build is ready for internal + external testers.</span></span></label>
+  <label class="item"><input type="checkbox" id="a2"><span class="lbl"><span class="t">Send TestFlight link to iOS testers</span><span class="hint">Family + close testers first, then wider group.</span></span></label>
+  <label class="item"><input type="checkbox" id="a3"><span class="lbl"><span class="t">Collect iOS tester feedback via in-app Report a Bug</span><span class="hint">Feedback shows up in dj-triage.web.app.</span></span></label>
+  <label class="item"><input type="checkbox" id="a4"><span class="lbl"><span class="t">Complete App Store listing (screenshots, description, keywords, category, support URL, age rating)</span></span></label>
+  <label class="item"><input type="checkbox" id="a5"><span class="lbl"><span class="t">App Privacy questionnaire in App Store Connect</span><span class="hint">Declare data collection. Privacy URL: brucysnz.github.io/doctorsjournal-legal/privacy-policy.html ✓</span></span></label>
+  <label class="item"><input type="checkbox" id="a6"><span class="lbl"><span class="t">Cut final production build via EAS → upload to App Store Connect</span><span class="hint">Rollback iOS 221 for testers first; final production build after tester feedback settles.</span></span></label>
+  <label class="item"><input type="checkbox" id="a7"><span class="lbl"><span class="t">Submit for full App Store review</span><span class="hint">Stricter than beta review — allow 1–3 days. Demo account: review@doctorsjournal.nz.</span></span></label>
+</div>
+
+<h2>2 · Google — Play Store</h2>
+<div class="note">Android 27 is live on Play Internal testing. Path: internal → closed → open → production.</div>
+<div class="card">
+  <label class="item"><input type="checkbox" id="g0"><span class="lbl"><span class="t">Android Google sign-in / OAuth verified <span class="tag done">done</span></span><span class="hint">Play App Signing SHA-1 registered in Firebase.</span></span></label>
+  <label class="item"><input type="checkbox" id="g0b"><span class="lbl"><span class="t">Android 27 AAB live on Play Internal <span class="tag live">live</span></span><span class="hint">Rollback build from working commit 64edf1a.</span></span></label>
+  <label class="item"><input type="checkbox" id="g0c"><span class="lbl"><span class="t">Tester whitelist — brucys, brucysboy, bryanrawiri68, spammjaxx, stephrawiri1 <span class="tag done">done</span></span></span></label>
+  <label class="item"><input type="checkbox" id="g2"><span class="lbl"><span class="t">Complete Play Store main store listing</span><span class="hint">Screenshots (min 2, up to 8), short + full description, feature graphic (1024×500), icon (512×512), category.</span></span></label>
+  <label class="item"><input type="checkbox" id="g3"><span class="lbl"><span class="t">Data safety form + content rating questionnaire</span></span></label>
+  <label class="item"><input type="checkbox" id="g4"><span class="lbl"><span class="t">Complete Google OAuth branding page</span><span class="hint">Currently shows project ID on consent screen. Blocks public launch.</span></span></label>
+  <label class="item"><input type="checkbox" id="g5"><span class="lbl"><span class="t">Promote Internal → Closed → Open testing</span></span></label>
+  <label class="item"><input type="checkbox" id="g6"><span class="lbl"><span class="t">Submit for Play review (production track)</span></span></label>
+</div>
+
+<h2>3 · Payments &amp; Pricing (RevenueCat)</h2>
+<div class="note">Free trial while testing. Paid subscription turns on at public launch.</div>
+<div class="card">
+  <label class="item"><input type="checkbox" id="p1"><span class="lbl"><span class="t">Decide final launch price (NZ$)</span><span class="hint">Monthly + Annual tiers. Consider a "founder" discount for early testers.</span></span></label>
+  <label class="item"><input type="checkbox" id="p2"><span class="lbl"><span class="t">Set subscription products in App Store Connect</span></span></label>
+  <label class="item"><input type="checkbox" id="p3"><span class="lbl"><span class="t">Set subscription products in Google Play Console</span></span></label>
+  <label class="item"><input type="checkbox" id="p4"><span class="lbl"><span class="t">Link Play service-account JSON in RevenueCat</span><span class="hint">Needed for Android billing to work.</span></span></label>
+  <label class="item"><input type="checkbox" id="p5"><span class="lbl"><span class="t">Turn SUBSCRIPTIONS_ENABLED on in DJ</span></span></label>
+  <label class="item"><input type="checkbox" id="p6"><span class="lbl"><span class="t">Test a real purchase — iOS sandbox + Android</span></span></label>
+</div>
+
+<h2>4 · Free Lifetime Accounts (Comps)</h2>
+<div class="note">For family, early testers, and the Apple/Google demo reviewers. Granted via RevenueCat Promotional entitlement.</div>
+<div class="card">
+  <div class="subhead">How (once per person):</div>
+  <label class="item"><input type="checkbox" id="f1"><span class="lbl"><span class="t">1 · They sign in to the app once (creates their account)</span></span></label>
+  <label class="item"><input type="checkbox" id="f2"><span class="lbl"><span class="t">2 · RevenueCat → find their user → grant a Promotional entitlement, Lifetime</span></span></label>
+  <label class="item"><input type="checkbox" id="f3"><span class="lbl"><span class="t">3 · App shows unlocked/Premium forever — iOS &amp; Android</span></span></label>
+  <div class="subhead">People granted (tick as done):</div>
+  <label class="item"><input type="checkbox" id="f_p1"><span class="lbl"><span class="t">Bryan Rawiri (bryanrawiri68@gmail.com)</span></span></label>
+  <label class="item"><input type="checkbox" id="f_p2"><span class="lbl"><span class="t">Jacqui (spammjaxx@gmail.com)</span></span></label>
+  <label class="item"><input type="checkbox" id="f_p3"><span class="lbl"><span class="t">Steph (stephrawiri1@gmail.com)</span></span></label>
+  <label class="item"><input type="checkbox" id="f_p4"><span class="lbl"><span class="t">— (add name)</span></span></label>
+  <label class="item"><input type="checkbox" id="f_p5"><span class="lbl"><span class="t">— (add name)</span></span></label>
+  <label class="item"><input type="checkbox" id="f_p6"><span class="lbl"><span class="t">— (add name)</span></span></label>
+</div>
+
+<h2>5 · Pre-launch polish</h2>
+<div class="note">Nice-to-haves before wide launch. Not blockers, but worth ticking off.</div>
+<div class="card">
+  <label class="item"><input type="checkbox" id="q1"><span class="lbl"><span class="t">Transcription accuracy disclosure on About screen</span><span class="hint">"Whisper is ~95% accurate — review your transcript."</span></span></label>
+  <label class="item"><input type="checkbox" id="q2"><span class="lbl"><span class="t">Multi-speaker isolation opt-in tested by 2+ real users</span></span></label>
+  <label class="item"><input type="checkbox" id="q3"><span class="lbl"><span class="t">Ask DJ voice search — smoke-test with 5 real records</span></span></label>
+  <label class="item"><input type="checkbox" id="q4"><span class="lbl"><span class="t">Provider subsidy MVP — Stripe form + admin approval flow verified</span></span></label>
+  <label class="item"><input type="checkbox" id="q5"><span class="lbl"><span class="t">Emergency access — unauthenticated view smoke-tested</span></span></label>
+  <label class="item"><input type="checkbox" id="q6"><span class="lbl"><span class="t">Backup + Restore — cross-device roundtrip on iOS + Android</span></span></label>
+</div>
+
+<h2>Already done ✓</h2>
+<div class="card">
+  <label class="item done"><input type="checkbox" id="d1"><span class="lbl"><span class="t">Privacy Policy — live (brucysnz.github.io/doctorsjournal-legal/privacy-policy.html)</span></span></label>
+  <label class="item done"><input type="checkbox" id="d2"><span class="lbl"><span class="t">Terms of Service — live (brucysnz.github.io/doctorsjournal-legal/terms-of-service.html)</span></span></label>
+  <label class="item done"><input type="checkbox" id="d3"><span class="lbl"><span class="t">Support email — mydoctorsjournal@gmail.com</span></span></label>
+  <label class="item done"><input type="checkbox" id="d4"><span class="lbl"><span class="t">Google Play developer verification cleared (2026-06-30)</span></span></label>
+  <label class="item done"><input type="checkbox" id="d5"><span class="lbl"><span class="t">Firebase Auth + Cloud Functions live (Whisper, Claude, GPT-4o proxies)</span></span></label>
+  <label class="item done"><input type="checkbox" id="d6"><span class="lbl"><span class="t">Ecosystem sync (dj-sync → skye-vault) working</span></span></label>
+  <label class="item done"><input type="checkbox" id="d7"><span class="lbl"><span class="t">Apple review demo account — review@doctorsjournal.nz seeded</span></span></label>
+</div>
+
+<footer>
+  Target: TestFlight + Play Internal running smoothly, then production submissions this week. Progress saves on this device automatically.
+  <br><button class="reset" id="reset">Reset all ticks</button>
+</footer>
+</main>
+
+<script>
+(function(){
+  var KEY='dj-launch-v1';
+  var state={};
+  try { state=JSON.parse(localStorage.getItem(KEY)||'{}'); } catch(e){ state={}; }
+  var boxes=[].slice.call(document.querySelectorAll('input[type=checkbox]'));
+
+  function stamp(d){
+    var days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    var mon=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var h=d.getHours(), m=d.getMinutes(); var ap=h<12?'am':'pm'; var h12=h%12; if(h12===0)h12=12;
+    return days[d.getDay()]+' '+d.getDate()+' '+mon[d.getMonth()]+' '+d.getFullYear()+', '+h12+':'+(m<10?'0'+m:m)+' '+ap;
+  }
+  function render(){
+    var done=0, total=boxes.length;
+    boxes.forEach(function(b){
+      var s=state[b.id];
+      b.checked=!!(s&&s.on);
+      var item=b.closest('.item');
+      var old=item.querySelector('.ts'); if(old) old.remove();
+      if(b.checked){
+        done++;
+        var ts=document.createElement('div'); ts.className='ts';
+        ts.textContent='✓ '+ (s.ts||'');
+        item.querySelector('.lbl').appendChild(ts);
+      }
+    });
+    var prog=document.getElementById('prog');
+    prog.textContent='';
+    var b1=document.createElement('b'); b1.textContent=String(done);
+    prog.appendChild(b1);
+    prog.appendChild(document.createTextNode(' of '+total+' done'));
+  }
+  boxes.forEach(function(b){
+    b.addEventListener('change',function(){
+      if(b.checked){ state[b.id]={on:true, ts:stamp(new Date())}; }
+      else { delete state[b.id]; }
+      localStorage.setItem(KEY,JSON.stringify(state));
+      render();
+    });
+  });
+  document.getElementById('reset').addEventListener('click',function(){
+    if(confirm('Clear all ticks and timestamps on this device?')){ state={}; localStorage.setItem(KEY,'{}'); render(); }
+  });
+  render();
+})();
+</script>
+</body>
+</html>
