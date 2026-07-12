@@ -41,16 +41,47 @@
   .linkbtn { display:inline-block; background:var(--teal); color:#fff; font-weight:800; font-size:14px; padding:9px 14px; border-radius:9px; text-decoration:none; margin:4px 0 6px; word-break:break-all; }
   .hintline { font-size:13px; color:var(--soft); margin:6px 0; line-height:1.45; }
   code { background:#eef4f5; padding:1px 5px; border-radius:4px; font-size:13px; }
+  /* Tab nav */
+  .tabs { display:flex; gap:2px; background:#fff; border-bottom:2px solid var(--line); position:sticky; top:0; z-index:5; }
+  .tabs .wrap { padding:0 18px; display:flex; gap:0; }
+  .tab-btn { flex:1; padding:14px 12px; background:none; border:0; border-bottom:3px solid transparent; font:600 14px inherit; color:var(--soft); cursor:pointer; text-align:center; transition:color .15s, border-color .15s; }
+  .tab-btn.active { color:var(--teal-dark); border-bottom-color:var(--teal); }
+  .tab-btn:hover { color:var(--teal-dark); }
+  section.tab-pane { display:none; }
+  section.tab-pane.active { display:block; }
+  /* Pricing */
+  .price-card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px; margin:12px 0; }
+  .price-card.featured { border-color:var(--teal); border-width:2px; box-shadow:0 2px 8px rgba(27,122,138,.08); }
+  .price-card h3 { margin:0 0 4px 0; font-size:18px; color:var(--teal-dark); }
+  .price-card .tagline { color:var(--soft); font-size:13px; margin-bottom:12px; }
+  .price-amt { font-size:32px; font-weight:800; color:var(--ink); line-height:1; margin:8px 0; }
+  .price-amt small { font-size:14px; font-weight:500; color:var(--soft); }
+  .price-features { margin:12px 0 0 0; padding-left:20px; }
+  .price-features li { font-size:14px; margin:6px 0; color:var(--ink); line-height:1.5; }
+  .price-callout { background:#eef4f5; border-left:3px solid var(--teal); padding:10px 14px; margin:14px 0; border-radius:4px; font-size:13px; color:var(--ink); line-height:1.55; }
+  .price-callout b { color:var(--teal-dark); }
+  .split-row { display:flex; gap:10px; align-items:baseline; margin:8px 0; padding:10px 0; border-bottom:1px dashed var(--line); font-size:14px; }
+  .split-row:last-child { border-bottom:0; }
+  .split-row .who { flex:1; color:var(--ink); }
+  .split-row .amt { font-weight:800; color:var(--teal-dark); }
+  .pending-tag { display:inline-block; font-size:10.5px; font-weight:700; padding:2px 8px; border-radius:20px; background:#fdf0dc; color:var(--amber); margin-left:6px; vertical-align:middle; }
 </style>
 </head>
 <body>
 <header><div class="wrap">
-  <h1><span class="brand">Doctor's Journal</span> — Launch Checklist</h1>
-  <div class="sub">Everything outstanding to go live on the App Store &amp; Play Store. Tap to tick — each item date-stamps itself.</div>
+  <h1><span class="brand">Doctor's Journal</span> — Launch</h1>
+  <div class="sub">Install instructions, launch checklist, and pricing. Tabs below.</div>
   <div class="prog" id="prog">Loading…</div>
 </div></header>
 
+<nav class="tabs"><div class="wrap">
+  <button class="tab-btn active" data-tab="checklist">Install &amp; Checklist</button>
+  <button class="tab-btn" data-tab="pricing">Pricing</button>
+</div></nav>
+
 <main class="wrap" id="list">
+
+<section class="tab-pane active" id="tab-checklist">
 
 <h2>📲 Install Doctor's Journal &amp; Sign In — Tester Instructions</h2>
 <div class="note">Copy the steps for your phone. Same links for everyone. Any problems — email <b>mydoctorsjournal@gmail.com</b>.</div>
@@ -86,7 +117,7 @@
 <h2>1 · Apple — TestFlight &amp; App Store</h2>
 <div class="note">iOS 221 is the rollback build now processing on TestFlight. Path: external testing → full App Store review → live.</div>
 <div class="card">
-  <label class="item"><input type="checkbox" id="a1"><span class="lbl"><span class="t">iOS 221 processed in TestFlight <span class="tag wait">watcher on</span></span><span class="hint">Apple emails when the build is ready for internal + external testers.</span></span></label>
+  <label class="item"><input type="checkbox" id="a1"><span class="lbl"><span class="t">iOS 221 processed + approved by Apple for external testing <span class="tag done">approved</span></span><span class="hint">Beta review APPROVED 2026-07-13. Public link enabled.</span></span></label>
   <label class="item"><input type="checkbox" id="a2"><span class="lbl"><span class="t">Send TestFlight link to iOS testers</span><span class="hint">Family + close testers first, then wider group.</span></span></label>
   <label class="item"><input type="checkbox" id="a3"><span class="lbl"><span class="t">Collect iOS tester feedback via in-app Report a Bug</span><span class="hint">Feedback shows up in dj-triage.web.app.</span></span></label>
   <label class="item"><input type="checkbox" id="a4"><span class="lbl"><span class="t">Complete App Store listing (screenshots, description, keywords, category, support URL, age rating)</span></span></label>
@@ -161,6 +192,94 @@
   Target: TestFlight + Play Internal running smoothly, then production submissions this week. Progress saves on this device automatically.
   <br><button class="reset" id="reset">Reset all ticks</button>
 </footer>
+
+</section><!-- /tab-checklist -->
+
+<section class="tab-pane" id="tab-pricing">
+
+<h2>💳 Individual (Consumer)</h2>
+<div class="note">For anyone using Doctor's Journal for their own medical records. Billed via Apple App Store or Google Play (standard IAP).</div>
+
+<div class="card price-card featured">
+  <h3>Doctor's Journal Premium</h3>
+  <div class="tagline">Full app — unlimited recordings, AI summaries, backup, Ask DJ voice search, health integrations.</div>
+  <div class="price-amt">NZ$10 <small>/ month</small></div>
+  <div class="price-callout"><b>7-day free trial</b> for every new account. Cancel any time via App Store / Play Store subscription settings.</div>
+  <ul class="price-features">
+    <li>Unlimited doctor-visit recordings + AI summaries</li>
+    <li>Medication tracking with reminders</li>
+    <li>Document + test-result vault with OCR</li>
+    <li>Ask DJ voice search across your medical history</li>
+    <li>Cross-device backup (Google Drive on Android, iCloud on iOS)</li>
+    <li>Emergency access screen (no sign-in required for responders)</li>
+    <li>Apple Health / Health Connect integration</li>
+  </ul>
+  <div class="price-callout"><b>Note:</b> the exact price your phone shows is the localised amount from Apple/Google (may vary by country) — NZ$10/mo is the reference price.</div>
+</div>
+
+<h2>🌿 Iwi &amp; Hapū (Organisation-Subsidised)</h2>
+<div class="note">Iwi or hapū pay part of the subscription for their registered whānau. Bypasses Apple's 30% cut — more of every dollar stays with the app + the whānau member gets a discount.</div>
+
+<div class="card price-card">
+  <h3>Provider-Subsidy Model</h3>
+  <div class="tagline">Iwi/hapū sets a subsidy % (0–100). Whānau member pays the remainder via web portal — no Apple IAP.</div>
+
+  <div class="subhead">Example — Ngāti Pikiao Rūnanga at 50% (pilot partner)</div>
+  <div class="split-row">
+    <div class="who">Whānau member pays</div>
+    <div class="amt">NZ$5 / month</div>
+  </div>
+  <div class="split-row">
+    <div class="who">Ngāti Pikiao contributes</div>
+    <div class="amt">NZ$5 / month</div>
+  </div>
+  <div class="split-row">
+    <div class="who">Total to Doctor's Journal (after Stripe fees ~2.9%)</div>
+    <div class="amt">NZ$9.70 / month</div>
+  </div>
+
+  <div class="price-callout"><b>Why this saves everyone money:</b> Apple IAP takes ~30% (NZ$3 out of every NZ$10). Stripe takes ~3% (NZ$0.30). At 100 whānau members, that's <b>NZ$270/month saved vs Apple</b>. At 1,000 members, NZ$2,700/month saved — money that can go back into further subsidising members OR extending coverage.</div>
+
+  <ul class="price-features">
+    <li>Iwi/hapū picks the subsidy percentage — 25%, 50%, 100% (fully free for whānau), or custom</li>
+    <li>Registered on a roster (NHI + name + DOB) — one entitlement per person, no misuse</li>
+    <li>Whānau sign up at a dedicated web portal, no Apple/Google account needed for billing</li>
+    <li>Iwi/hapū receives a single monthly invoice for the aggregated subsidy amount</li>
+    <li>Full app features unlocked — identical to individual Premium</li>
+    <li>Members keep their subscription if they leave the iwi (they take over payment)</li>
+  </ul>
+  <div class="price-callout"><b>Pilot:</b> Ngāti Pikiao Rūnanga (<a href="https://pikiaorunanga.org.nz/" target="_blank" style="color:var(--teal-dark);">pikiaorunanga.org.nz</a>) — first partner. Contact Bruce to onboard your iwi/hapū.</div>
+</div>
+
+<h2>🏢 Employer &amp; Business (Bulk Seats)</h2>
+<div class="note">Employers who want to fund Doctor's Journal for their staff as part of a wellbeing package (e.g. Southern Cross–style employer health plans).</div>
+
+<div class="card price-card">
+  <h3>Business Plan <span class="pending-tag">pricing TBC</span></h3>
+  <div class="tagline">Volume-discounted seat pricing for employers. Same app, invoiced quarterly or annually.</div>
+  <ul class="price-features">
+    <li>Same feature set as individual Premium</li>
+    <li>Bulk seat pricing — indicative NZ$7–9 / seat / month depending on tier</li>
+    <li>Aggregate invoicing (monthly or quarterly)</li>
+    <li>Optional employer dashboard (aggregate usage counts only — no personal medical data ever leaves the employee's device)</li>
+    <li>Onboarding support (email + Slack channel for HR / benefits team)</li>
+  </ul>
+  <div class="price-callout"><b>Contact Bruce for pilot pricing:</b> mydoctorsjournal@gmail.com. Final price locked once we have 2–3 pilot employers signed.</div>
+</div>
+
+<h2>🎁 Free Lifetime (Comps)</h2>
+<div class="note">For family, close testers, and Apple/Google demo reviewers — granted via RevenueCat Promotional entitlement.</div>
+<div class="card price-card">
+  <h3>Complimentary Access</h3>
+  <div class="tagline">Selected personal grants only — not applied for. If you don't already have a comp, the standard tiers above apply.</div>
+</div>
+
+<footer>
+  Pricing shown in NZD. Individual App Store / Play Store prices display in your local currency. All pricing subject to Terms of Service.
+</footer>
+
+</section><!-- /tab-pricing -->
+
 </main>
 
 <script>
@@ -208,6 +327,38 @@
     if(confirm('Clear all ticks and timestamps on this device?')){ state={}; localStorage.setItem(KEY,'{}'); render(); }
   });
   render();
+
+  // Tab switcher — remembers last tab via localStorage + honours ?tab= or #tab
+  function activateTab(name){
+    var buttons = document.querySelectorAll('.tab-btn');
+    var panes = document.querySelectorAll('.tab-pane');
+    var matched = false;
+    buttons.forEach(function(b){
+      var on = b.dataset.tab === name;
+      b.classList.toggle('active', on);
+      if (on) matched = true;
+    });
+    panes.forEach(function(p){
+      p.classList.toggle('active', p.id === 'tab-' + name);
+    });
+    if (matched) {
+      try { localStorage.setItem('dj-launch-tab', name); } catch(e){}
+    }
+    // Reflect in URL for shareable direct links
+    if (history && history.replaceState) {
+      history.replaceState(null, '', '#' + name);
+    }
+  }
+  document.querySelectorAll('.tab-btn').forEach(function(b){
+    b.addEventListener('click', function(){ activateTab(b.dataset.tab); });
+  });
+  // Initial tab: URL hash > URL ?tab= > last-visited > default 'checklist'
+  var initial = (location.hash || '').replace('#','')
+    || (new URLSearchParams(location.search)).get('tab')
+    || (function(){ try { return localStorage.getItem('dj-launch-tab'); } catch(e){ return null; } })()
+    || 'checklist';
+  if (initial !== 'checklist' && initial !== 'pricing') initial = 'checklist';
+  activateTab(initial);
 })();
 </script>
 </body>
