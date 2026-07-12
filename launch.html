@@ -249,6 +249,24 @@
     <li>Members keep their subscription if they leave the iwi (they take over payment)</li>
   </ul>
   <div class="price-callout"><b>Pilot:</b> Ngāti Pikiao Rūnanga (<a href="https://pikiaorunanga.org.nz/" target="_blank" style="color:var(--teal-dark);">pikiaorunanga.org.nz</a>) — first partner. Contact Bruce to onboard your iwi/hapū.</div>
+
+  <div class="subhead" style="margin-top:22px;">🛠 How it works — full path from iwi request to whānau access</div>
+  <ol class="price-features" style="padding-left:22px;">
+    <li><b>Iwi/hapū requests onboarding</b> via the request form at <a href="https://dj-claim.web.app/request" target="_blank" style="color:var(--teal-dark);"><code>dj-claim.web.app/request</code></a> — 2-minute form (contact, org details, subsidy %, member count, roster timing).</li>
+    <li><b>Bruce reviews + approves</b> the request in the DJ admin console at <a href="https://dj-portal-admin.web.app" target="_blank" style="color:var(--teal-dark);"><code>dj-portal-admin.web.app</code></a> → Provider Requests tab → tap Approve. System issues a unique <b>provider ID</b> and a short <b>join code</b> (e.g. <code>NGATI-PIKIAO</code>).</li>
+    <li><b>Iwi uploads roster</b> (NHI + name + DOB per whānau member) — kept server-side only, never client-readable. Ensures one entitlement per person, no misuse.</li>
+    <li><b>Iwi communicates to whānau:</b> "Sign up at dj-claim.web.app with code <code>NGATI-PIKIAO</code>". Whānau visit the portal, enter identity → roster matches → enter Stripe payment for their share → subscription active.</li>
+    <li><b>Whānau signs in to the DJ app</b> (iOS or Android) with the same email they used at the claim portal — Premium features unlock automatically. No Apple/Google IAP.</li>
+    <li><b>Iwi receives a single monthly Stripe invoice</b> for the aggregated subsidy contribution — one line item per active member.</li>
+  </ol>
+
+  <div class="price-callout" style="margin-top:16px;"><b>Key URLs for iwi/hapū + admins:</b>
+    <ul style="margin:8px 0 0 0; padding-left:20px;">
+      <li><b>Iwi request form:</b> <a href="https://dj-claim.web.app/request" target="_blank" style="color:var(--teal-dark);"><code>https://dj-claim.web.app/request</code></a></li>
+      <li><b>Whānau signup portal:</b> <a href="https://dj-claim.web.app" target="_blank" style="color:var(--teal-dark);"><code>https://dj-claim.web.app</code></a></li>
+      <li><b>Admin console (Bruce only):</b> <a href="https://dj-portal-admin.web.app" target="_blank" style="color:var(--teal-dark);"><code>https://dj-portal-admin.web.app</code></a> — Google sign-in, admin allowlist required</li>
+    </ul>
+  </div>
 </div>
 
 <h2>🏢 Employer &amp; Business (Bulk Seats)</h2>
@@ -265,6 +283,17 @@
     <li>Onboarding support (email + Slack channel for HR / benefits team)</li>
   </ul>
   <div class="price-callout"><b>Contact Bruce for pilot pricing:</b> mydoctorsjournal@gmail.com. Final price locked once we have 2–3 pilot employers signed.</div>
+
+  <div class="subhead" style="margin-top:18px;">🛠 How it works — employer path uses the SAME provider-subsidy backend</div>
+  <ol class="price-features" style="padding-left:22px;">
+    <li><b>Employer requests onboarding</b> at <a href="https://dj-claim.web.app/request" target="_blank" style="color:var(--teal-dark);"><code>dj-claim.web.app/request</code></a> — same form as iwi/hapū, just tick "Employer / Business" as the org type. Subsidy % is usually 100 (employer covers full seat).</li>
+    <li><b>Bruce approves</b> in the admin console at <a href="https://dj-portal-admin.web.app" target="_blank" style="color:var(--teal-dark);"><code>dj-portal-admin.web.app</code></a> → issues a company code (e.g. <code>SOUTHERN-CROSS</code>).</li>
+    <li><b>HR uploads staff roster</b> (work email or employee ID — no NHI needed for employer tier).</li>
+    <li><b>Staff sign up at</b> <a href="https://dj-claim.web.app" target="_blank" style="color:var(--teal-dark);"><code>dj-claim.web.app</code></a> <b>with the company code.</b> Roster match → entitlement granted → no payment step required for staff (employer covers).</li>
+    <li><b>Employer receives one Stripe invoice</b> monthly/quarterly for the seats used — no per-staff billing complexity.</li>
+  </ol>
+
+  <div class="price-callout" style="margin-top:14px;"><b>Optional employer dashboard</b> (future) — surfaces aggregate usage counts (active seats, adoption rate) without exposing any employee's medical data. Medical content NEVER leaves the employee's device.</div>
 </div>
 
 <h2>🎁 Free Lifetime (Comps)</h2>
