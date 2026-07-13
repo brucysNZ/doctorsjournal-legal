@@ -39,6 +39,13 @@
   .install ol { margin:6px 0 4px; padding-left:20px; }
   .install li { font-size:13.5px; margin:5px 0; color:var(--ink); line-height:1.4; }
   .linkbtn { display:inline-block; background:var(--teal); color:#fff; font-weight:800; font-size:14px; padding:9px 14px; border-radius:9px; text-decoration:none; margin:4px 0 6px; word-break:break-all; }
+  .link-row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:4px 0 6px; }
+  .link-row .linkbtn { margin:0; flex:1 1 auto; min-width:0; }
+  .copy-btn { display:inline-flex; align-items:center; gap:6px; background:#fff; color:var(--teal-dark); border:2px solid var(--teal); font-weight:700; font-size:13px; padding:8px 14px; border-radius:9px; cursor:pointer; transition:background .12s, color .12s; white-space:nowrap; }
+  .copy-btn:hover { background:var(--teal); color:#fff; }
+  .copy-btn:active { transform:translateY(1px); }
+  .copy-btn.copied { background:var(--green); border-color:var(--green); color:#fff; }
+  .copy-btn.copied::before { content:"✓ "; }
   .hintline { font-size:13px; color:var(--soft); margin:6px 0; line-height:1.45; }
   code { background:#eef4f5; padding:1px 5px; border-radius:4px; font-size:13px; }
   /* Tab nav */
@@ -87,7 +94,10 @@
 <div class="note">Copy the steps for your phone. Same links for everyone. Any problems — email <b>mydoctorsjournal@gmail.com</b>.</div>
 <div class="card install">
   <div class="plat">🍎 iPhone / iPad</div>
-  <a class="linkbtn" href="https://testflight.apple.com/join/wTGKMuJB">testflight.apple.com/join/wTGKMuJB</a>
+  <div class="link-row">
+    <a class="linkbtn" href="https://testflight.apple.com/join/wTGKMuJB">testflight.apple.com/join/wTGKMuJB</a>
+    <button class="copy-btn" data-copy="https://testflight.apple.com/join/wTGKMuJB">Copy link</button>
+  </div>
   <ol>
     <li>Install the free <b>TestFlight</b> app from the App Store (one time only).</li>
     <li>Tap the link above — it opens in TestFlight.</li>
@@ -96,7 +106,10 @@
   </ol>
 
   <div class="plat">🤖 Android</div>
-  <a class="linkbtn" href="https://play.google.com/apps/internaltest/4701730022045859120">play.google.com/apps/internaltest/4701730022045859120</a>
+  <div class="link-row">
+    <a class="linkbtn" href="https://play.google.com/apps/internaltest/4701730022045859120">play.google.com/apps/internaltest/4701730022045859120</a>
+    <button class="copy-btn" data-copy="https://play.google.com/apps/internaltest/4701730022045859120">Copy link</button>
+  </div>
   <ol>
     <li>Tap the link on your Android phone → tap <b>Become a tester</b>.</li>
     <li>Tap <b>Download it on Google Play</b> → <b>Install</b>.</li>
@@ -394,6 +407,46 @@
   document.querySelectorAll('.tab-btn').forEach(function(b){
     b.addEventListener('click', function(){ activateTab(b.dataset.tab); });
   });
+  // Copy-to-clipboard buttons on the install links (mobile clipboard access
+  // is finicky — using navigator.clipboard with a legacy execCommand fallback
+  // for older WebKit / non-secure origins).
+  function copyToClipboard(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function(resolve, reject) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.left = '-9999px'; ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        var ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        ok ? resolve() : reject(new Error('execCommand failed'));
+      } catch (e) {
+        document.body.removeChild(ta);
+        reject(e);
+      }
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var text = btn.getAttribute('data-copy') || '';
+      if (!text) return;
+      var original = btn.textContent;
+      copyToClipboard(text).then(function(){
+        btn.classList.add('copied');
+        btn.textContent = 'Copied';
+        setTimeout(function(){ btn.classList.remove('copied'); btn.textContent = original; }, 1800);
+      }).catch(function(){
+        btn.textContent = 'Copy failed';
+        setTimeout(function(){ btn.textContent = original; }, 1800);
+      });
+    });
+  });
+
   // Initial tab: URL hash > URL ?tab= > last-visited > default 'checklist'
   var initial = (location.hash || '').replace('#','')
     || (new URLSearchParams(location.search)).get('tab')
