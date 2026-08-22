@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doctor's Journal — The Story</title>
+<style>
+  :root { --teal:#1B7A8A; --teal-dark:#0f4a56; --coral:#e07a5f; --ink:#1a2e35; --soft:#5a6b72; --line:#e3e8ea; --bg:#f5faf9; --green:#1f9d55; --amber:#c77700; --paper:#fffefb; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  header { background:linear-gradient(135deg,var(--teal),var(--teal-dark)); color:#fff; padding:34px 22px 30px; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 22px; }
+  header .wrap { padding:0 22px; }
+  h1 { margin:0; font-size:30px; letter-spacing:-.01em; }
+  .brand { color:#8be0dd; font-weight:800; }
+  .sub { color:#b8d5d9; margin-top:8px; font-size:15px; }
+  main { padding:28px 0 90px; }
+  /* Tabs */
+  .tabs { display:flex; gap:2px; background:#fff; border-bottom:2px solid var(--line); position:sticky; top:0; z-index:5; }
+  .tabs .wrap { padding:0 18px; display:flex; gap:0; }
+  .tab-btn { flex:1; padding:14px 10px; background:none; border:0; border-bottom:3px solid transparent; font:600 13.5px inherit; color:var(--soft); cursor:pointer; text-align:center; transition:color .15s, border-color .15s; }
+  .tab-btn.active { color:var(--teal-dark); border-bottom-color:var(--teal); }
+  .tab-btn:hover { color:var(--teal-dark); }
+  .tab-btn small { display:block; font-weight:400; font-size:11px; color:var(--soft); margin-top:2px; }
+  .tab-btn.active small { color:var(--teal); }
+  section.tab-pane { display:none; }
+  section.tab-pane.active { display:block; }
+  /* Article styling */
+  article { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:26px 28px; margin:20px 0; box-shadow:0 1px 3px rgba(15,74,86,.04); }
+  article h2 { margin:0 0 14px; color:var(--teal-dark); font-size:22px; letter-spacing:-.01em; }
+  article h3 { color:var(--teal-dark); font-size:18px; margin:24px 0 8px; }
+  article p { margin:0 0 16px; font-size:16.5px; line-height:1.72; color:var(--ink); }
+  article p.lead { font-size:18px; font-weight:500; color:var(--teal-dark); line-height:1.6; border-left:3px solid var(--teal); padding:6px 0 6px 16px; margin:0 0 22px; background:linear-gradient(90deg,rgba(139,224,221,.15),transparent); }
+  article blockquote { margin:20px 0; padding:12px 20px; border-left:3px solid var(--coral); background:rgba(224,122,95,.06); color:var(--ink); font-style:italic; font-size:16.5px; line-height:1.65; border-radius:0 6px 6px 0; }
+  article ul { margin:0 0 16px; padding-left:22px; }
+  article li { margin:6px 0; font-size:16.5px; line-height:1.65; }
+  article .divider { border:0; border-top:1px solid var(--line); margin:26px 0; }
+  article .callout { background:#eef4f5; border:1px solid var(--line); border-left:3px solid var(--teal); padding:14px 18px; margin:20px 0; border-radius:0 8px 8px 0; }
+  article .callout p:last-child { margin:0; }
+  article .callout .label { font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--teal-dark); font-weight:700; margin-bottom:6px; display:block; }
+  .meta { color:var(--soft); font-size:13px; margin:0 0 4px; }
+  .meta .dot { color:var(--line); margin:0 6px; }
+  .copy-hint { text-align:center; color:var(--soft); font-size:12.5px; margin:16px 0 0; }
+  .copy-btn { display:inline-block; background:#fff; color:var(--teal-dark); border:1.5px solid var(--teal); font:600 13px inherit; padding:7px 14px; border-radius:8px; cursor:pointer; margin-left:8px; }
+  .copy-btn:hover { background:var(--teal); color:#fff; }
+  .copy-btn.copied { background:var(--green); border-color:var(--green); color:#fff; }
+  .copy-btn.copied::before { content:"✓ "; }
+  footer { color:var(--soft); font-size:12.5px; text-align:center; padding:20px 0 40px; }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1><span class="brand">Doctor's Journal</span> — The Story</h1>
+  <div class="sub">Three versions of the why. Short, medium, long-for-storyboard.</div>
+</div></header>
+
+<nav class="tabs" role="tablist"><div class="wrap">
+  <button class="tab-btn active" data-tab="mine" role="tab">Mine<small>Bruce's why</small></button>
+  <button class="tab-btn" data-tab="short" role="tab">Short<small>the elevator</small></button>
+  <button class="tab-btn" data-tab="long" role="tab">Long<small>for storyboard</small></button>
+</div></nav>
+
+<main class="wrap">
+
+<!-- MINE (Bruce's personal story) -->
+<section class="tab-pane active" id="tab-mine">
+<article>
+  <p class="meta">Version 1 · The personal why</p>
+  <h2>Why I built this</h2>
+
+  <p class="lead">I built Doctor's Journal because I couldn't remember what my own doctor was telling me.</p>
+
+  <p>Every time I sat in an appointment, I'd nod and agree and tell them I understood — and I did, in the moment. Then I'd walk out to the car park, sit in the driver's seat, and realise I couldn't reliably tell my wife what had just been said. Three medications. Which one was for what. When to take the follow-up test. What warning signs to watch for. Half of it was gone by the time I got home.</p>
+
+  <p>I'd sit there frustrated with myself. Not because I hadn't paid attention — because it turns out that's what memory does under stress in a clinical setting. Your body's tense, you're thinking about the diagnosis they just handed you, and the ten minutes of instructions after that slide past you like they were in a language you don't quite speak.</p>
+
+  <p>I knew I couldn't be the only one. I thought about my whānau. My kaumātua. My friends with chronic conditions who go to three specialists a month. I thought about the people I'd met who <em>don't</em> go to the doctor at all — not because they don't need to, but because they know they'll forget, they don't want to be a nuisance, and they don't want to pay $60 to sit there and nod at something they'll never retain.</p>
+
+  <p>So I built the thing I wished I had. You record the appointment. AI writes you a plain-English summary. Your medications get tracked. Follow-ups land on your calendar. Everything's kept, forever, searchable, in your pocket. You can listen back on the sofa that evening with a cup of tea and your daughter beside you and actually understand what was said.</p>
+
+  <p>That's it. That's the whole reason. I stopped fearing appointments because I stopped fearing forgetting. And now I want everyone else who's been sitting there nodding to have the same thing.</p>
+
+  <hr class="divider">
+  <p class="meta">— Bruce</p>
+</article>
+</section>
+
+<!-- SHORT (elevator pitch) -->
+<section class="tab-pane" id="tab-short">
+<article>
+  <p class="meta">Version 2 · The elevator pitch <span class="dot">·</span> ~4 paragraphs</p>
+  <h2>Why every phone needs Doctor's Journal</h2>
+
+  <p>You walk out of a doctor's appointment. Five minutes later you can't remember half of what was said. It's not because you weren't listening — it's what happens to memory under stress in a clinical setting. Most people just nod, agree, take the script, and walk out already forgetting. Then they miss the follow-up, misunderstand the medication, and never come back with the questions they should be asking.</p>
+
+  <p>For millions of people this isn't just a nuisance — it's a barrier that stops them going in the first place. Kaumātua. Older adults. Māori and Pasifika whānau. Chronic condition patients. People with English as a second language. They know they'll forget, they don't want to be a nuisance, they can't afford to keep coming back, so they don't go. They sit at home with symptoms they don't understand because the memory burden alone is too much to carry.</p>
+
+  <p>Doctor's Journal is the memory. Record the appointment with consent. Get a plain-English summary you can actually understand. Medications tracked. Follow-ups on your calendar. Your whole medical history searchable and permanent. Listen back in your own time, with your family, in your own language. Walk into the next appointment with the questions you couldn't remember to ask.</p>
+
+  <p><b>That's not another health app — it's dignity, freedom to forget, and the confidence to keep going back.</b></p>
+
+  <button class="copy-btn" onclick="copyContent(this,'tab-short')">Copy this version</button>
+</article>
+</section>
+
+<!-- LONG (for storyboard / AI brief) -->
+<section class="tab-pane" id="tab-long">
+<article>
+  <p class="meta">Version 3 · Storyboard brief <span class="dot">·</span> for handing to an AI or video producer</p>
+  <h2>Doctor's Journal — the deeper story, with real scenes an AI can build from</h2>
+
+  <p class="lead">Read this whole page to a video generator or storyboard AI. Everything it needs — the emotional arc, the characters, the scenes, the visual anchors, the tone rules — is here.</p>
+
+  <h3>The core insight (one sentence)</h3>
+  <p>Doctor's Journal is not a health tech app. It is <strong>memory</strong> — for the millions of people who avoid the doctor because they know they'll forget what was said and can't afford to keep coming back.</p>
+
+  <h3>The audience — three real people, in their own words</h3>
+
+  <div class="callout">
+    <span class="label">Meet Aroha, 72</span>
+    <p>Aroha is a kaumātua living in Rotorua. Her mokopuna drive her to appointments. She has type 2 diabetes and a heart condition. Her doctor speaks quickly. She smiles and nods and says "āe, kei te pai" because she doesn't want to be a nuisance and she doesn't want the doctor to think she's stupid. In the car on the way home, her granddaughter asks "what did they say, Nan?" — and Aroha can't remember. It's happened dozens of times. She's stopped asking for the specialist referral she needs because she knows she'll just forget the answers again.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">Meet Sam, 54</span>
+    <p>Sam is a truck driver in South Auckland. He was diagnosed with kidney disease last year. Every specialist appointment ends the same way — a handful of new terms, three sheets of paper, and by the time he gets home he can't tell his wife which medication does what. He's missed two follow-up ultrasounds because he wrote the dates on a piece of paper that went through the wash. He tells himself he'll do better next time. He doesn't.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">Meet Mele, 38</span>
+    <p>Mele's mum is in hospital with pneumonia. Mele takes time off work to be there when the doctors do their rounds. The consultant comes at 7am, talks for four minutes, and leaves. Mele understood maybe half of what was said. Her mum understood almost none. When her siblings ring that night asking for an update, Mele has to guess.</p>
+  </div>
+
+  <h3>The moment BEFORE Doctor's Journal — the visual anchor</h3>
+  <p>Someone sitting in their car in a clinic car park, five minutes after their appointment. Not crying. Just still. Hands on the steering wheel. Trying to remember. Failing. That's the shot. It's a shot millions of people would recognise from their own life the second they see it.</p>
+
+  <h3>The moment WITH Doctor's Journal</h3>
+  <p>Same person, that evening, at home. On the sofa with a cup of tea. Maybe a daughter or a friend beside them. Phone in hand. Reading the summary out loud. Nodding — but this time nodding at something they actually understand. Highlighting the medication name. Adding a question for next time. Calm. In control. In their own time.</p>
+
+  <h3>The moment AFTER</h3>
+  <p>Two weeks later. Back at the doctor's. Same person. But this time they walk in with three questions written down, they understand the last visit, they know the medication is working. The doctor notices. The relationship changes. The appointment becomes a real conversation.</p>
+
+  <h3>The features — visualised as the video needs them, not as bullet points</h3>
+  <ul>
+    <li><b>The record button</b> — one big red mic in the middle of a soft, calm screen. One tap. That's the invitation. Doesn't ask you to fill out a form first. Just start.</li>
+    <li><b>The recording continuing</b> — visualise the phone locked in the person's pocket. The little red timer at the top. It's still going. Nothing was missed.</li>
+    <li><b>The summary appearing</b> — the moment the transcription finishes. Words that mean things. No jargon. "Your kidney function has stayed the same as last month" — not "GFR unchanged from prior serum sample". Plain English is a character in this story.</li>
+    <li><b>The medications appearing on their own</b> — the person didn't have to type anything. The app pulled them out of the conversation and now they're on the home screen with reminders set.</li>
+    <li><b>The history timeline</b> — every appointment, every test result, every medication, every note. A whole medical life on one screen. Scrollable. Searchable. Never deleted.</li>
+    <li><b>Listen back with family</b> — the visualisation is not the phone. It's TWO people leaning over the phone together. Doctor's Journal isn't a solo product. It's the thing that lets a family finally talk about health together.</li>
+    <li><b>In your own language</b> — English, te reo Māori, Español, Gagana Sāmoa, Vosa Vakaviti, Lea Fakatonga. The app knows most whānau aren't monolingual and the anxious conversation at home happens in the mother tongue.</li>
+    <li><b>Iwi and hapū paying for their kaumātua</b> — the provider portal side. Show a Rotorua-based iwi admin looking at their dashboard, ticking a member off, knowing that person will never sit in a car park unable to remember again. That's a scene too.</li>
+  </ul>
+
+  <h3>The privacy story — because it matters</h3>
+  <p>Everything is on the person's own phone. Encrypted backups go to their own Google Drive or iCloud — nowhere else. Nothing is sold. Nothing is shared with insurers, employers, or advertisers. The record of the doctor visit belongs to the person, not to a platform. This isn't a footnote — it's a first-line message. People need to trust the app with their most intimate information, and the app earns that trust by never breaking the deal.</p>
+
+  <h3>Tone rules for the video</h3>
+  <div class="callout">
+    <span class="label">Language to USE</span>
+    <p>"your memory" · "your journey" · "in your own time" · "understand" · "explained" · "read it back later" · "with your family" · "your own language" · "dignity" · "confidence" · "never forget again" · "when you're ready"</p>
+  </div>
+  <div class="callout">
+    <span class="label">Language to AVOID</span>
+    <p>"cutting-edge" · "revolutionary" · "AI-powered" · "disrupting healthcare" · "smart" · "transform" · "leverage" · "empower" (unless used softly) · anything that sounds like a startup pitch deck</p>
+  </div>
+  <div class="callout">
+    <span class="label">Never say</span>
+    <p>"concerning" · "alarming" · "urgent" · "abnormal" · "worrying" · "critical" · "high risk" · "worrisome" — DJ's whole AI writing style avoids these. The video should too.</p>
+  </div>
+
+  <h3>The final beat</h3>
+  <p>Close on the person the video started with. Same car park. Same steering wheel. Different look on their face. Not stressed. Not blank. Just quiet. Confident. They pull their phone out, tap the recording, and the summary loads. They read it once, then put the phone down, and drive home.</p>
+
+  <p>Final line — voiceover or text card:</p>
+  <blockquote>Never forget what your doctor said. Never fear an appointment again.<br>Doctor's Journal — your memory, in your pocket, in your own time.</blockquote>
+
+  <hr class="divider">
+
+  <h3>Optional cutaway: the wider ripple</h3>
+  <p>If the video needs a wider social frame at the end, this is the message: when kaumātua stop dreading appointments, they go earlier. When Māori and Pasifika whānau stop feeling whakamā about not understanding, they ask better questions. When people with chronic conditions can actually track what's changing, they catch problems sooner. This is a small app with a big downstream effect on health equity in Aotearoa. That's not marketing — that's just what happens when you give millions of people back the thing they've been ashamed of losing.</p>
+
+  <p class="copy-hint">Whole page copyable — ⌘A then ⌘C. Paste into any AI storyboard tool.</p>
+  <button class="copy-btn" onclick="copyContent(this,'tab-long')">Copy this version</button>
+</article>
+</section>
+
+<footer>
+  Doctor's Journal · The Story · <span id="today"></span>
+</footer>
+</main>
+
+<script>
+  // Tabs
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b === btn));
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.toggle('active', p.id === 'tab-' + tab));
+      // remember for reload
+      try { localStorage.setItem('dj-story-tab', tab); } catch {}
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+  // Restore last tab
+  try {
+    const saved = localStorage.getItem('dj-story-tab');
+    if (saved) document.querySelector('.tab-btn[data-tab="' + saved + '"]')?.click();
+  } catch {}
+
+  // Copy helper
+  function copyContent(btn, sectionId) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    const text = section.innerText.replace(/Copy this version/g, '').trim();
+    navigator.clipboard.writeText(text).then(() => {
+      btn.classList.add('copied');
+      btn.textContent = 'Copied';
+      setTimeout(() => { btn.classList.remove('copied'); btn.textContent = 'Copy this version'; }, 2000);
+    });
+  }
+
+  // Today's date
+  document.getElementById('today').textContent = new Date().toLocaleDateString('en-NZ', { month:'long', year:'numeric' });
+</script>
+
+</body>
+</html>
