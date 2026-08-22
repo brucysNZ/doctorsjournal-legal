@@ -58,6 +58,7 @@
   <button class="tab-btn active" data-tab="mine" role="tab">Mine<small>Bruce's why</small></button>
   <button class="tab-btn" data-tab="short" role="tab">Short<small>the elevator</small></button>
   <button class="tab-btn" data-tab="long" role="tab">Long<small>for storyboard</small></button>
+  <button class="tab-btn" data-tab="video" role="tab">Video<small>Midjourney prompts</small></button>
 </div></nav>
 
 <main class="wrap">
@@ -185,6 +186,94 @@
 </article>
 </section>
 
+<!-- VIDEO (Midjourney prompts) -->
+<section class="tab-pane" id="tab-video">
+<article>
+  <p class="meta">Version 4 · Midjourney prompts <span class="dot">·</span> ~20 sec short film · 4 scenes × 5 sec</p>
+  <h2>Doctor's Journal — 20-second short film for Midjourney</h2>
+
+  <p class="lead">Four sequential scenes. Generate each image in Midjourney, then animate. Each scene is 5 seconds. Stitch in any free editor (CapCut / iMovie / DaVinci Resolve).</p>
+
+  <div class="callout">
+    <span class="label">Aesthetic — use these consistently across all 4 scenes</span>
+    <p><b>Style anchor:</b> cinematic, warm natural light, soft focus, documentary realism, muted colour palette (teal · warm cream · earthy browns), grain, subtle film emulation, Aotearoa New Zealand setting. Everyone Māori or Pasifika, mid-40s to late-70s. Nothing shiny, nothing tech-y, nothing "startup". Real people, real light, real quiet.</p>
+    <p><b>Style suffix to append to every prompt:</b> <code>--ar 16:9 --style raw --v 7</code></p>
+  </div>
+
+  <h3>🎬 Scene 1 · The car park (0–5 sec)</h3>
+  <p><b>What we see:</b> A Māori kaumātua (woman, late 60s) sitting in the driver's seat of her car in a small-town New Zealand clinic car park. Hands still on the steering wheel. She's just come out of an appointment. She's not crying — she's still. Trying to remember what was said. Failing.</p>
+  <div class="callout">
+    <span class="label">Midjourney prompt — copy this</span>
+    <p><code>cinematic medium shot through a car windshield, māori kaumātua woman in her late sixties sitting in the driver's seat of a small silver car in a rotorua medical clinic car park, hands resting quietly on the steering wheel, soft afternoon light, faint reflection of trees in the glass, she is looking down and slightly ahead, subtle sadness and forgetfulness in her expression, no crying, just still, documentary photography style, natural warm colour grade, muted teal and cream palette, shallow depth of field, film grain, hyper-realistic, aotearoa new zealand suburban clinic exterior blurred in background --ar 16:9 --style raw --v 7</code></p>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+  </div>
+  <p><b>Animate motion:</b> low motion — a slow zoom in on her face, or the tiniest breath. Nothing dramatic.</p>
+
+  <h3>🎬 Scene 2 · Home, tea, phone (5–10 sec)</h3>
+  <p><b>What we see:</b> Same woman, later that evening. On her sofa. A cup of tea beside her. Her granddaughter is next to her, both looking at the phone in the kaumātua's hand. The phone shows Doctor's Journal — the recording playback screen. Soft evening lamp light. Warm. Safe.</p>
+  <div class="callout">
+    <span class="label">Midjourney prompt — copy this</span>
+    <p><code>intimate medium shot of a māori kaumātua woman in her late sixties sitting beside her teenage granddaughter on a soft brown sofa in a warmly lit new zealand living room, evening lamp glow, they are leaning together looking at a smartphone held in the grandmother's hand, the phone screen shows a calm blue and teal medical journal app with a play button and waveform, cup of tea steaming on the side table, patterned blanket over their laps, soft focus, cosy domestic scene, natural warm colour grade, gentle intergenerational moment, documentary photography style, film grain, hyper-realistic --ar 16:9 --style raw --v 7</code></p>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+  </div>
+  <p><b>Animate motion:</b> low motion — the granddaughter tilts her head slightly to see better; steam rises from the tea.</p>
+
+  <h3>🎬 Scene 3 · Understanding (10–15 sec)</h3>
+  <p><b>What we see:</b> Extreme close-up. The kaumātua's face. She's listening back. Small smile of understanding. Not a big grin — a quiet "oh, I get it now". A single tear if you want emotion, or just a soft nod.</p>
+  <div class="callout">
+    <span class="label">Midjourney prompt — copy this</span>
+    <p><code>extreme close up portrait of a māori kaumātua woman in her late sixties, warm evening light on her face, gentle small smile of understanding, calm and reassured expression, one tiny tear at the corner of her eye, eyes closed for just a moment as she listens, moko kauae visible on her chin, soft focus background, natural warm colour grade, documentary photography style, dignity and quiet relief, hyper-realistic, cinematic portrait, film grain --ar 16:9 --style raw --v 7</code></p>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+  </div>
+  <p><b>Animate motion:</b> low motion — she opens her eyes slowly. That's all. Let it breathe.</p>
+
+  <h3>🎬 Scene 4 · Back at the doctor, this time in control (15–20 sec)</h3>
+  <p><b>What we see:</b> Two weeks later. Same woman walking calmly into a doctor's office. Phone in hand, glancing at a note. She sits down opposite a doctor, and this time she's the one asking a question. The doctor is listening. She's leading the conversation.</p>
+  <div class="callout">
+    <span class="label">Midjourney prompt — copy this</span>
+    <p><code>cinematic medium wide shot, a māori kaumātua woman in her late sixties sitting confidently across a desk from a middle-aged pākehā doctor in a modern new zealand general practice consultation room, she is holding her smartphone and pointing to something on the screen with a calm smile, asking a question, the doctor is leaning forward listening attentively, soft natural window light, warm neutral consultation room, documentary photography style, empowerment and dignity, natural warm colour grade, hyper-realistic, film grain --ar 16:9 --style raw --v 7</code></p>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+  </div>
+  <p><b>Animate motion:</b> low to medium motion — the doctor nods, the kaumātua's hand moves as she gestures at the phone.</p>
+
+  <hr class="divider">
+
+  <h3>🎤 20-second voiceover script (pair with the video)</h3>
+  <div class="callout">
+    <span class="label">Voiceover text — paste into ElevenLabs (recommend a warm NZ female voice, mid-40s tone, slow)</span>
+    <p><i>(0–5 sec, over Scene 1, gentle piano behind):</i><br>
+    "You leave the doctor. And five minutes later, you can't remember what they said."</p>
+    <p><i>(5–10 sec, over Scene 2):</i><br>
+    "Doctor's Journal records it for you. So you can listen back, at home, with your whānau."</p>
+    <p><i>(10–15 sec, over Scene 3):</i><br>
+    "In your own time. In your own language."</p>
+    <p><i>(15–20 sec, over Scene 4, music resolves):</i><br>
+    "Never forget again. Doctor's Journal."</p>
+    <button class="copy-btn" onclick="copyPromptFromLast(this)">Copy voiceover</button>
+  </div>
+
+  <h3>🎼 Music suggestion</h3>
+  <p>Search on Epidemic Sound / Artlist / YouTube Audio Library for: <b>"quiet piano documentary"</b>, <b>"hopeful strings acoustic"</b>, or <b>"emotional cinematic gentle"</b>. Avoid anything with a big drop — this is a quiet story.</p>
+
+  <h3>📱 On the phone screens (Scene 2)</h3>
+  <p>You don't need to worry about matching the exact app UI — Midjourney will approximate a "medical journal app with playback controls". If you want it more accurate, you can hand it a reference screenshot (Midjourney supports image prompts via <code>/imagine</code> with an image URL prefix). Otherwise, close enough is fine for a 20-sec video — the message is in the humans, not the pixels.</p>
+
+  <h3>🧵 Stitching</h3>
+  <ol>
+    <li>Generate all 4 images in Midjourney</li>
+    <li>Animate each (Midjourney → "Animate" → Low motion, 5 sec)</li>
+    <li>Open CapCut (free, iPhone/Mac) or DaVinci Resolve (free, Mac)</li>
+    <li>Drag all 4 clips onto the timeline in order</li>
+    <li>Drop your ElevenLabs voiceover as an audio track</li>
+    <li>Add the piano music at low volume underneath</li>
+    <li>Text overlay at the end: "Doctor's Journal" + "doctorsjournal.nz"</li>
+    <li>Export 1080p — you're done</li>
+  </ol>
+
+  <p class="copy-hint">Copy any prompt above with one click. Regenerate any scene as many times as you like — Midjourney's first result isn't always the best.</p>
+</article>
+</section>
+
 <footer>
   Doctor's Journal · The Story · <span id="today"></span>
 </footer>
@@ -208,7 +297,7 @@
     if (saved) document.querySelector('.tab-btn[data-tab="' + saved + '"]')?.click();
   } catch {}
 
-  // Copy helper
+  // Copy helper — for whole-section copies
   function copyContent(btn, sectionId) {
     const section = document.getElementById(sectionId);
     if (!section) return;
@@ -217,6 +306,34 @@
       btn.classList.add('copied');
       btn.textContent = 'Copied';
       setTimeout(() => { btn.classList.remove('copied'); btn.textContent = 'Copy this version'; }, 2000);
+    });
+  }
+  // Copy helper — for single Midjourney prompt (finds the <code> inside the same callout)
+  function copyPrompt(btn) {
+    const callout = btn.closest('.callout');
+    const code = callout ? callout.querySelector('code') : null;
+    const text = code ? code.innerText.trim() : '';
+    if (!text) return;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.classList.add('copied');
+      const orig = btn.textContent;
+      btn.textContent = 'Copied';
+      setTimeout(() => { btn.classList.remove('copied'); btn.textContent = orig; }, 2000);
+    });
+  }
+  // Copy helper — for voiceover callout (grabs all <p> text)
+  function copyPromptFromLast(btn) {
+    const callout = btn.closest('.callout');
+    const paras = callout ? Array.from(callout.querySelectorAll('p')).map(p => p.innerText.trim()) : [];
+    // Strip the (0-5 sec, ...) stage directions in italics — user wants just the spoken text
+    const text = paras
+      .map(p => p.replace(/^\(.*?\):\s*/gm, '').trim())
+      .filter(Boolean)
+      .join('\n\n');
+    navigator.clipboard.writeText(text).then(() => {
+      btn.classList.add('copied');
+      btn.textContent = 'Copied';
+      setTimeout(() => { btn.classList.remove('copied'); btn.textContent = 'Copy voiceover'; }, 2000);
     });
   }
 
