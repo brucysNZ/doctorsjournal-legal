@@ -59,6 +59,7 @@
   <button class="tab-btn" data-tab="short" role="tab">Short<small>the elevator</small></button>
   <button class="tab-btn" data-tab="long" role="tab">Long<small>for storyboard</small></button>
   <button class="tab-btn" data-tab="video" role="tab">Video<small>Midjourney prompts</small></button>
+  <button class="tab-btn" data-tab="oneshot" role="tab">One-shot<small>full arc prompt</small></button>
 </div></nav>
 
 <main class="wrap">
@@ -272,6 +273,45 @@
   </ol>
 
   <p class="copy-hint">Copy any prompt above with one click. Regenerate any scene as many times as you like — Midjourney's first result isn't always the best.</p>
+</article>
+</section>
+
+<!-- ONE-SHOT (full arc narrative prompt for Sora/Veo/Runway) -->
+<section class="tab-pane" id="tab-oneshot">
+<article>
+  <p class="meta">Version 5 · One-shot full-arc prompt <span class="dot">·</span> for Sora 2 / Veo 3 / Runway Gen-4 / Kling 2</p>
+  <h2>The whole story in a single prompt</h2>
+
+  <p class="lead">Midjourney V1 can't do multi-scene cuts — it only animates one image at a time. But <b>Sora 2, Veo 3, Runway Gen-4</b> and <b>Kling 2</b> all handle narrative sequences from a single text prompt. Paste this whole prompt into any of them.</p>
+
+  <div class="callout">
+    <span class="label">Full narrative prompt — copy this whole block</span>
+    <p><code>A 60-second cinematic documentary short film following one kind woman in her early sixties through a single day. She has soft silver-grey hair loosely pulled back, gentle wrinkles around her eyes, a warm reassuring face, wearing a cream cardigan over a simple blouse — ordinary, relatable, someone's grandmother. She is the same person in every scene. Warm natural light throughout, muted colour palette of teal, warm cream and earthy browns, subtle film grain, documentary realism, hyper-realistic, no stylised look. Aotearoa New Zealand setting.<br><br>SCENE 1 (0-8 sec): Interior of a small silver car, medium shot from the passenger side. She is driving slowly through a quiet New Zealand suburban street on a soft cloudy morning. Her lips move silently — she is talking to herself, rehearsing what she wants to ask, worried she'll forget. Slight anxiety in her eyes. Soft ambient street reflections on the windshield.<br><br>SCENE 2 (8-15 sec): She sits alone in a small warm medical clinic waiting room, cardigan wrapped around her, hands folded in her lap. She glances down at the smartphone resting in her hands. Camera slow push-in on her face. She's calm but focused, mentally preparing.<br><br>SCENE 3 (15-22 sec): A nurse gently calls her name. She rises. Wide shot from behind as she walks slowly down a soft-lit corridor toward the consultation room, cardigan visible, silver hair catching the light.<br><br>SCENE 4 (22-35 sec): Medium two-shot inside the doctor's office. She sits opposite a warm middle-aged doctor. Her phone rests face-up on the desk between them, quietly recording — a subtle red dot visible on its screen. She is listening intently, asking a question, gesturing gently with her hand. The doctor leans forward, engaged and warm. Natural window light. Real human conversation, real dignity.<br><br>SCENE 5 (35-45 sec): Home, evening. Warmly lit living room, soft lamp glow. She sits on a soft brown sofa beside her teenage granddaughter, both looking down together at the smartphone in her hand as it plays back the recording. Cup of tea steaming on the side table. She is calmly explaining what the doctor said, her granddaughter listening with quiet interest, nodding.<br><br>SCENE 6 (45-55 sec): Neighbourhood park in golden hour. She walks slowly along a path, phone in her hand. She looks down and taps the screen once — a small proud smile as she stops the recording. Her adult daughter and young granddaughter are visible in the middle distance playing on a swing set, laughing softly. Warm golden light streaming through the trees.<br><br>SCENE 7 (55-60 sec): Close-up on her face as she looks up toward her daughter and granddaughter. A tiny satisfied smile. A breath of quiet contentment. She has remembered everything. Final beat holds for two seconds before soft slow fade to black.<br><br>Tone throughout: warm, dignified, quiet. No urgency, no drama, no tech-y aesthetic, no music-video cuts. This is memory returned to someone who thought she had to lose it. Every scene is the same woman, same clothes, same face, same silver-grey hair — continuity is critical.</code></p>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copy the full prompt</button>
+  </div>
+
+  <h3>Which tool should you try?</h3>
+  <ul>
+    <li><b>Sora 2</b> — chatgpt.com/sora — best at narrative flow, single-take feel. Requires ChatGPT Plus or Pro subscription. Handles the whole arc in one output.</li>
+    <li><b>Google Veo 3</b> — labs.google/fx/veo — text-to-video WITH audio (music + ambient sound generated automatically). May trip on the 60-sec length; try 30 sec version first (cut Scenes 1+2 shorter).</li>
+    <li><b>Runway Gen-4</b> — runwayml.com — good for cinematic look, needs a paid plan.</li>
+    <li><b>Kling 2</b> — klingai.com — free daily credits, handles narrative reasonably well.</li>
+  </ul>
+
+  <h3>If you get a 20-sec limit instead of 60-sec</h3>
+  <p>Split the prompt into two halves and run twice. Then stitch:</p>
+  <ul>
+    <li><b>Half A (0-30 sec):</b> Scenes 1-3-4 (drive → waiting → doctor's office)</li>
+    <li><b>Half B (30-60 sec):</b> Scenes 5-6-7 (home → park → final smile)</li>
+  </ul>
+
+  <h3>Fallback: Midjourney hero image</h3>
+  <p>If none of those tools work out, generate ONE evocative Midjourney still that captures the whole arc emotionally — then animate to 20 sec:</p>
+  <div class="callout">
+    <span class="label">Midjourney hero-image fallback — one still capturing the whole story</span>
+    <p><code>cinematic wide shot in golden hour light, a kind woman in her early sixties with soft silver-grey hair loosely pulled back wearing a cream cardigan, walking slowly along a park path in aotearoa new zealand, holding her smartphone in her hand and looking down at it with a small satisfied smile, her adult daughter and young granddaughter visible in the soft-focus middle distance playing on a swing set, warm golden autumn light streaming through the trees, muted teal and earthy colour palette, documentary photography style, hyper-realistic, film grain, dignity and quiet pride, ordinary relatable someone's grandmother --ar 16:9 --style raw --v 7</code></p>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copy hero prompt</button>
+  </div>
 </article>
 </section>
 
