@@ -18,7 +18,7 @@
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="subtitle">Doctor's Journal &mdash; Last updated: 8 July 2026</p>
+  <p class="subtitle">Doctor's Journal &mdash; Last updated: 10 October 2026</p>
 
   <p>Doctor's Journal is committed to protecting your privacy and personal health information. This policy explains where your data lives, what leaves your device, and your rights over it. We comply with the New Zealand Privacy Act 2020 and follow best practices for health data handling.</p>
 
@@ -36,18 +36,20 @@
     <li><strong>Emergency information:</strong> emergency contacts and medical details you choose to store</li>
   </ul>
 
-  <h2>Third-Party Services We Use for Sign-In</h2>
-  <p>Doctor's Journal does not operate any servers of its own. To sign you in, the app uses:</p>
+  <h2>Your Account and Subscription</h2>
+  <p>To run your account, the app uses the following services. None of them receive your health records:</p>
   <ul>
-    <li><strong>Firebase Authentication (Google):</strong> stores your email address and authentication credentials so the app can sign you in and link your device to your account. This information is held by Google on Firebase's infrastructure.</li>
+    <li><strong>Firebase (Google):</strong> Firebase Authentication stores your email address and sign-in credentials so the app can sign you in. Our Firebase backend (Cloud Functions, Firestore and Storage, on Google infrastructure) runs the AI features below and keeps a small record for your account: how many AI requests you have used and your subscription status. It does not store your health records.</li>
+    <li><strong>Account details we receive:</strong> when you create an account we receive your name, email address, sign-up date and sign-in method, so we can administer accounts and help you if you contact us. We do not receive your health records.</li>
+    <li><strong>Apple (App Store) / Google (Play Store):</strong> handle subscription payments. We do not receive or hold your payment details.</li>
+    <li><strong>RevenueCat:</strong> confirms whether your subscription is active. It receives your account identifier and your App Store or Play Store purchase record. It does not receive your health data.</li>
   </ul>
-  <p>Your subscription is managed by Apple (App Store) or Google (Play Store) directly through their in-app purchase systems. We do not hold your payment information.</p>
-  <p>None of these providers hold your health records, recordings, transcripts, medications, symptoms, or any other personal medical information &mdash; those live on your device only.</p>
+  <p>Your health records, recordings, transcripts, medications, symptoms and other medical information stay on your device, apart from the AI processing described below.</p>
 
   <h2>What Leaves Your Device (AI Processing)</h2>
   <p>To provide AI-powered features, certain data is sent transiently to third-party services for processing. This data is not retained by us or by them for training:</p>
   <ul>
-    <li><strong>OpenAI (Whisper, GPT-4o-mini, text-to-speech):</strong> Audio recordings are sent to Whisper for transcription, transcripts are sent to GPT-4o-mini for summarisation and the Ask DJ voice-search feature, and summary text is sent to OpenAI's text-to-speech service for voice playback. All requests are routed through a secure Firebase Cloud Function (Google infrastructure) so the OpenAI API key is not exposed on the device. OpenAI does not retain your data for training when accessed via the API. Audio files are deleted from the Cloud Function within seconds of transcription completing.</li>
+    <li><strong>OpenAI (Whisper, GPT-4o-mini, text-to-speech):</strong> Audio recordings are sent to Whisper for transcription, transcripts are sent to GPT-4o-mini for summarisation and the Ask DJ voice-search feature, and summary text is sent to OpenAI's text-to-speech service for voice playback. All requests are routed through a secure Firebase Cloud Function (Google infrastructure) so the OpenAI API key is not exposed on the device. OpenAI does not retain your data for training when accessed via the API. Long recordings are uploaded temporarily to Firebase Storage for transcription; the audio file is deleted as soon as transcription finishes, whether it succeeds or fails.</li>
     <li><strong>Google (Cloud Vision, Places):</strong> Used for document OCR and healthcare provider search. Google processes data per their Cloud Terms of Service and does not use it for advertising.</li>
     <li><strong>Apple HealthKit / Google Health Connect:</strong> If you connect Apple Health (iOS) or Health Connect (Android), the app reads selected health readings (heart rate, blood pressure, sleep, etc) into your local journal. These readings stay on your device only and are never sent anywhere off your device.</li>
   </ul>
